@@ -20,6 +20,7 @@ public class UserController {
         this.userService = userService;
     }
 
+
     @GetMapping()
     public String getListUser(Model model) {
         List<User> users = userService.getAllUsers();
