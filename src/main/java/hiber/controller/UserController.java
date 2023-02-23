@@ -33,7 +33,6 @@ public class UserController {
         model.addAttribute("user", new User());
         return "users/new";
     }
-
     @PostMapping()
     public String addUser(@ModelAttribute("user") User user) {
         userService.createUser(user);
