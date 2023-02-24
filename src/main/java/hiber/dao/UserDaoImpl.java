@@ -12,9 +12,6 @@ public class UserDaoImpl implements UserDao {
 
     private User user;
 
-    public UserDaoImpl(User user){
-        this.user = user;
-    }
     @PersistenceContext
     private EntityManager entityManager;
 
@@ -29,7 +26,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public void deleteUser(int id) {
+    public void deleteUser(Long id) {
         User user = entityManager.find(User.class, id);
         entityManager.remove(user);
     }
@@ -41,7 +38,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public User getUserById(int id) {
+    public User getUserById(Long id) {
         return entityManager.find(User.class, id);
     }
 }
